@@ -25,15 +25,20 @@ export const Api = (() => {
         })
             .then((response) => response.json());
 
-    // const editTodo = (id, content) => 
-    //     fetch([baseUrl, path, id].join("/"), {
-    //         method: "PATCH"
-    //     }).then((response) => response.json()).then((json) => json.content = content);
+    const editTodo = (id, content, isCompleted) => 
+        fetch([baseUrl, path, id].join("/"), {
+            method: "PATCH",
+            body: {
+                content: content,
+                isCompleted: isCompleted
+            }
+        }).then((response) => response.json());
 
     return {
         getTodos,
         getTodo,
         deleteTodo,
-        addTodo
+        addTodo,
+        editTodo
     };
 })();

@@ -38,25 +38,14 @@ export const Controller = ((model, view) => {
         });
     };
 
-
     const completeTodo = () => {
         const pendinglistEle = document.querySelector(view.domstr.pendinglist);
-        const completelistEle = document.querySelector(view.domstr.completedlist);
         pendinglistEle.addEventListener("click", (event) => {
             const [className, id] = event.target.className.split(" ");
-            let todo = state.pendinglist.filter((todo) => +todo.id !== +id);
-            console.log(todo);
-            state.todolist = state.pendinglist.filter((todo) => +todo.id !== +id);
-            state.todolist = state.completedlist.push(todo);
+            model.editTodo(id, content, true).then(todo => {
+                state.completedlist = [todo, ...state.completedlist];
+            });
         });
-        // let completebutton = document.querySelector(view.domstr.completebutton);
-        // completebutton.addEventListener("click", (event) => {
-        //     const [className, id] = event.target.className.split(" ");
-        //     let todo = model.getTodos(id);
-        //     model.deleteTodo(id);
-        //     todo.isCompleted = true;
-        //     state.completedlist = [todo, ...completedlist];
-        // });
     }
     // let selected;
     // const eventListener = (element) => {

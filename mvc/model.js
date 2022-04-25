@@ -48,6 +48,7 @@ export const Model = ((api, view) => {
     const getTodo = api.getTodo;
     const deleteTodo = api.deleteTodo;
     const addTodo = api.addTodo;
+    const editTodo = api.editTodo;
 
     return {
         getTodos,
@@ -55,5 +56,6 @@ export const Model = ((api, view) => {
         addTodo,
         State,
         Todo,
+        editTodo,
     };
 })(Api, View);
