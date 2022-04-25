@@ -1,0 +1,30 @@
+ul li {
+    list-style: none;
+    letter-spacing: 1px;
+}
+
+ul {
+    height: 700px;
+}
+
+.pending_list {
+    border: 5px;
+    float: left;
+    background-color: aquamarine;
+    width: 600px;
+    height: 800px
+}
+
+.completed_list {
+    border: 10px;
+    float: left;
+    background-color: aquamarine;
+    width: 600px;
+    height: 800px
+}
+
+#completed_list_container {
+    border: 10px;
+    width: 600px;
+    height: 800px
+}
